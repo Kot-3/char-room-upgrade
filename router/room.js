@@ -8,7 +8,7 @@ const multer = require('multer');
 const storage = multer.diskStorage({
   // 上传文件的目录
   destination: function (req, file, cb) {
-    cb(null, 'status')
+    cb(null, 'public')
   },
   // 上传文件的名称
   filename: function (req, file, cb) {

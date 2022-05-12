@@ -553,8 +553,11 @@
           let file = e.target.files[0];
           const formData = new FormData();
           formData.append('file', file);
+          let urls = `${window.location.protocol}//${window.location.host}/room/file_upload`
+          //'http://127.0.0.1:3000/room/file_upload'
+          window.location.href
           $.ajax({
-            url: 'http://127.0.0.1:3000/room/file_upload',
+            url: urls,
             /*接口域名地址*/
             type: 'post',
             data: formData,
@@ -775,16 +778,14 @@
         if (parsedMsg.url) {
           parsedMsg.url = '/' + parsedMsg.url
           let splitUrl = parsedMsg.url.split('.')
-          if (splitUrl[1] == 'jpg') {
-            console.log(splitUrl[1], 444);
+          if (splitUrl[1] == 'jpg' || splitUrl[1] == 'png' || splitUrl[1] == 'jpeg' || splitUrl[1] ==
+            'gif') {
             temp =
               `<img class="myimgs padding-r-10" src="${parsedMsg.url}" alt=""><a href="${parsedMsg.url}">图片下载</a>`
           } else {
-            console.log(5555);
             temp = `<span class='padding-r-10'>${parsedMsg.url}</span> <a href="${parsedMsg.url}">文件下载</a>`
           }
         }
-        console.log(temp);
         switch (msgItem.type) {
           case 'sys':
             message = '<div class="sys-msg"><span class="msg">' + extractContent(msgItem.msg) + '</span></div>'
