@@ -8,6 +8,7 @@
 .pnp.js
 msg.db*
 /public
+*.db
 
 
 # testing
