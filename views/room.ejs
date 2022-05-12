@@ -199,16 +199,19 @@
 
     .addimgBtn {
       position: absolute;
-      left: 0px;
-      top: 4px;
-      background-color: #efefef;
+      left: 1px;
+      top: 6px;
+      width: 30px;
+      height: 30px;
+      background: url('/upload.svg') 0 0 no-repeat;
+      /* background-color: #efefef;
       width: 35px;
       height: 35px;
       border-radius: 50%;
       line-height: 31px;
       font-size: 30px;
       text-align: center;
-      cursor: pointer;
+      cursor: pointer; */
     }
 
     input[type="color"] {
@@ -334,11 +337,8 @@
     }
 
     .boardImg img {
-      max-width: 100vw;
-    }
-
-    .padding-r-10 {
-      padding-right: 10px;
+      max-width: 80vw;
+      max-height: 100vh;
     }
 
     .cancel {
@@ -361,10 +361,15 @@
       opacity: 0;
     }
 
-
     @media screen and (max-device-width: 480px) {
       body {
         -webkit-text-size-adjust: none;
+      }
+    }
+
+    @media screen and (max-device-width: 480px) {
+      .boardImg img {
+        width: 100vw;
       }
     }
   </style>
@@ -391,7 +396,8 @@
         <textarea type="text" name="msg" id="msg" placeholder="some text..." maxlength="1000"></textarea>
       </div>
       <div class="color">
-        <span class="addimgBtn">+</span>
+        <!-- <span class="addimgBtn">+</span> -->
+        <img class="addimgBtn" src="/upload.svg" alt="">
         <input type="file" type="hidden" name="" id="myuplod">
       </div>
 
