@@ -12,7 +12,7 @@ const filter = require('./utils/filter')
 const app = express()
 
 const roomRouter = require('./router/room')
-app.use(express.static('public'))
+app.use(express.static(path.join(__dirname, 'public')))
 app.use(compression())
 app.use(express.static(path.join(__dirname, 'assets')))
 app.set('views', path.join(__dirname, 'views'))
