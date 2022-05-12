@@ -63,6 +63,7 @@
       box-sizing: border-box;
       display: block;
       position: relative;
+      overflow: hidden;
     }
 
     .toast {
@@ -241,7 +242,7 @@
     .message {
       position: relative;
       padding: 0 5px;
-      line-height: 1.6;
+      line-height: 2.5;
       word-break: break-all;
       overflow-wrap: break-word;
     }
@@ -361,6 +362,11 @@
       opacity: 0;
     }
 
+    .uploadsvg {
+      width: 40px;
+      height: 40px;
+    }
+
     @media screen and (max-device-width: 480px) {
       body {
         -webkit-text-size-adjust: none;
@@ -370,6 +376,10 @@
     @media screen and (max-device-width: 480px) {
       .boardImg img {
         width: 100vw;
+      }
+
+      .send-box {
+        margin-top: 0;
       }
     }
   </style>
@@ -789,7 +799,8 @@
             temp =
               `<img class="myimgs padding-r-10" src="${parsedMsg.url}" alt=""><a href="${parsedMsg.url}">图片下载</a>`
           } else {
-            temp = `<span class='padding-r-10'>${parsedMsg.url}</span> <a href="${parsedMsg.url}">文件下载</a>`
+            temp =
+              `<img class="uploadsvg padding-r-10" src="/file.svg" alt=""><a href="${parsedMsg.url}">${parsedMsg.url}</a>`
           }
         }
         switch (msgItem.type) {
